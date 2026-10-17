@@ -1,0 +1,2 @@
+# copyapp
+copy a app
