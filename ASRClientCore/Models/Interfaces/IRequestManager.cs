@@ -1,0 +1,24 @@
+﻿using ASRClientCore.Models.Enums;
+
+namespace ASRClientCore.Models.Interfaces
+{
+    public interface IRequestManager
+    {
+        public event Action<string>? Log;
+        public IAsrProtocolHandler Handler { get; }
+        public uint Timeout { get; set; }
+        public ResponseStatus SendGetInformationRequest(out string? deviceInfo);
+        public ResponseStatus SendGetDeviceInfoRequest(out string? deviceInfo);
+        public ResponseStatus SendReadPartitionStartRequest(string partName, out ulong size);
+        public ResponseStatus SendWriteMemoryStartRequest(ulong addr, ulong size, WriteMemoryMode mode, string partName);
+        public ResponseStatus SendErasePartitionRequest(string partName);
+        public ResponseStatus SendPullMemoryRequest(ulong address, ulong len, out ulong size);
+        public ResponseStatus SendRebootDeviceRequest(BootMode bootMode);
+        public ResponseStatus SendPowerDownDeviceRequest();
+        public ResponseStatus SendRepartitionRequest(List<Partition> partitionList);
+
+        /* public ResponseStatus SendWritePartitionRequest(string partName);
+         public ResponseStatus SendErasePartitionRequest(string partName);
+         public ResponseStatus SendRebootDeviceToCustomModeRequest(BootMode bootMode);*/
+    }
+}

@@ -1,0 +1,4 @@
+C:\Users\Administrator\Desktop\ASRClientCore\obj\Release\net8.0-windows7.0\win-x64\ASRClientCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\ASRClientCore\obj\Release\net8.0-windows7.0\win-x64\ASRClientCore.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\ASRClientCore\obj\Release\net8.0-windows7.0\win-x64\ASRClientCore.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\ASRClientCore\obj\Release\net8.0-windows7.0\win-x64\ASRClientCore.csproj.CoreCompileInputs.cache
