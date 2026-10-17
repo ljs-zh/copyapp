@@ -1,0 +1,26 @@
+name: Build Windows EXE
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: windows-latest 
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.1
+
+      - name: Restore Dependencies
+        run: dotnet restore ASRClientCore/ASRClientCore.csproj
+
+      - name: Build with MSBuild
+        run: msbuild ASRClientCore/ASRClientCore.sln /p:Configuration=Release /p:Platform="x64" /p:OutDir="../publish/"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ASRClientCore-Win64
+          path: ./publish/
